@@ -4,6 +4,11 @@ import cog
 import yaml
 
 
+def reindent(level, text):
+    head, eol, tail = text.partition('\n')
+    return head + textwrap.indent(eol + tail, "    " * level).replace('\n', "\n\n") if eol else text
+
+
 def write(text):
     assert text.lstrip().startswith("..\n")
     cog.out(textwrap.dedent(text)[3:])
@@ -17,7 +22,7 @@ def write_informer(*, desc, title, expr, mode=""):
         :widths: 1 50
 
         * - Описание
-          - {desc}
+          - {reindent(3, desc)}
         * - Заголовок
           - ``{title}``
         * - Выражение
