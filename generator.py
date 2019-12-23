@@ -9,7 +9,7 @@ def write(text):
     cog.out(textwrap.dedent(text)[3:])
 
 
-def write_informer(desc, title, expr, mode=""):
+def write_informer(*, desc, title, expr, mode=""):
     write(f"""\
     ..
     .. list-table::
@@ -32,7 +32,6 @@ def write_informer(desc, title, expr, mode=""):
     """)
 
 
-def write_informers():
-    with open("informers.yml", encoding="utf-8-sig") as f:
-        for informer in yaml.safe_load(f):
-            write_informer(**informer)
+def write_informers(yaml_source):
+    for informer in yaml.safe_load(yaml_source):
+        write_informer(**informer)
