@@ -1,9 +1,10 @@
-.PHONY: all README.rst
+.PHONY: all
 
 COG := cog
-COG_FLAGS := -e
+COG_FLAGS := -e -Icogs
+COG_SRC := docs/Informers.rst
 
-all: README.rst
+all .PHONY: $(COG_SRC)
 
-README.rst:
+$(COG_SRC):
 	@$(COG) $(COG_FLAGS) -cr $@
