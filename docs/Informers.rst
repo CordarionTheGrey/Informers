@@ -79,6 +79,14 @@
       mode: D
 
     - desc: >-
+        Здоровье в поле упало до 18 HP, но герой не убегает от монстра. Высок риск умереть
+        в ближайшую минуту.
+      title: Героиня при смерти! (gv.health HP)
+      expr: >-
+        gv.currentMonster && gv.health <= 18
+      mode: LDAW
+
+    - desc: >-
         Герой встретил бродячего торговца.
       title: Бродячий торговец
       expr: >-
@@ -324,6 +332,18 @@
       - ``gv.godpowerPrc == 100 && !gv.inFight``
     * - Тип
       - ``D``
+.. list-table::
+    :stub-columns: 1
+    :widths: 1 50
+
+    * - Описание
+      - Здоровье в поле упало до 18 HP, но герой не убегает от монстра. Высок риск умереть в ближайшую минуту.
+    * - Заголовок
+      - ``Героиня при смерти! (gv.health HP)``
+    * - Условие
+      - ``gv.currentMonster && gv.health <= 18``
+    * - Тип
+      - ``LDAW``
 .. list-table::
     :stub-columns: 1
     :widths: 1 50
@@ -614,4 +634,4 @@
       - ``Крафтим освятительный прибор``
     * - Условие
       - ``gv.inventoryCountLike("^о(?!святительный прибор)", "bc") >= 2 && !gv.inFight && gv.godpower >= (gv.isForecast("lowpoweractivatables") ? 30 : 55)``
-.. [[[end]]] (checksum: 0eb00019a0c13acbd74f09e778f5f100)
+.. [[[end]]] (checksum: 8b51d1915e474c79fdbc1c5d995d89af)
