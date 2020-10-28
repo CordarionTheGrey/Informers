@@ -108,9 +108,9 @@
 
     - desc: >-
         Можно пойти в подземелье с пьянки в городе.
-      title: Торговля закончилась
+      title: Торговля заканчивается
       expr: >-
-        gv.inventory <= gv.inventoryUnsellable && gv.inTown && gv.dungeonAvailable && gv.godpower >= 85 && gv.charges >= 2
+        gv.inventory <= gv.inventoryUnsellable + 1 && gv.inTown && gv.dungeonAvailable && gv.godpower >= 85 && gv.charges >= 2
 
     - desc: >-
         Можно пойти в море.
@@ -385,9 +385,9 @@
     * - Описание
       - Можно пойти в подземелье с пьянки в городе.
     * - Заголовок
-      - ``Торговля закончилась``
+      - ``Торговля заканчивается``
     * - Условие
-      - ``gv.inventory <= gv.inventoryUnsellable && gv.inTown && gv.dungeonAvailable && gv.godpower >= 85 && gv.charges >= 2``
+      - ``gv.inventory <= gv.inventoryUnsellable + 1 && gv.inTown && gv.dungeonAvailable && gv.godpower >= 85 && gv.charges >= 2``
 .. list-table::
     :stub-columns: 1
     :widths: 1 50
@@ -634,4 +634,4 @@
       - ``Крафтим освятительный прибор``
     * - Условие
       - ``gv.inventoryCountLike("^о(?!святительный прибор)", "bc") >= 2 && !gv.inFight && gv.godpower >= (gv.isForecast("lowpoweractivatables") ? 30 : 55)``
-.. [[[end]]] (checksum: 8b51d1915e474c79fdbc1c5d995d89af)
+.. [[[end]]] (checksum: b074e6609d1cf53a5372ad013e70f23d)
