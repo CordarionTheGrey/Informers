@@ -116,6 +116,7 @@ body:not(.th_nightly) .dmc.notAWall {
 
 body:not(.th_nightly) .dmc.notAWall::before {
     display: block;
+    padding: 1px 0 20px;
     text-align: center;
     font-weight: bold;
     color: #7E7E7E;
@@ -143,6 +144,7 @@ body:not(.th_nightly) .dmc.notAWall.pointerMatchedThermo::before {
 /* Цветные точки (начало). */
 .dmc.notAWall::before {
     display: block;
+    padding: 1px 0 20px;
     text-align: center;
     font-weight: bold;
     content: "•";
